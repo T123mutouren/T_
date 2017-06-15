@@ -1,4 +1,4 @@
-* function --fileupload
+* function --fileupload  上传文档
 > <?php
 > namespace KitBaseBundle\Service;
 > 
@@ -22,3 +22,22 @@
 >         return $subDir . '/' .$fileName;
 >     }
 > }
+
+
+*function 对code字段截取设给pCode
+
+> public function textAction(){
+>        $repository = $this->getDoctrine()->getRepository('KitCaseBundle:Institutions');
+>        $data = $repository->findAll();
+>        $em = $this->getDoctrine()->getManager();
+>        foreach($data as $k => $v){
+>            $code = $v->getCode();
+>            $v->setPCode(substr($code,0,6));
+>            $em->persist($v);
+>            dump(substr($code,0,6));
+>        }
+>        $em->flush();
+>        return new JsonResponse([
+>            'text' => 123
+>        ]);
+>    }
