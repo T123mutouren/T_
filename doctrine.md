@@ -10,14 +10,15 @@
 >php bin/console doctrine:gentrate:entity BundleName:tablaName
 
 *生成get|set方法
->php bin/console generate:doctrine:entities BundleName
+>php bin/console doctrine:generate:entities BundleName
 
-*检测生成表
+*检测、生成表
 >php bin/console doctrine:schema:update --dump-sql
 >php bin/console doctrine:schema:update --force
 
 * 周期管理工具（自动完成）
 >  *@ORM\HasLifecycleCallbacks();
+
 > prePersist() 提交数据时执行
 > preUpdate() 修改数据时执行
 
