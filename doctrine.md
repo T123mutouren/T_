@@ -13,6 +13,7 @@
 >php bin/console doctrine:generate:entities BundleName
 
 ** 检测、生成表
+
 >php bin/console doctrine:schema:update --dump-sql
 >php bin/console doctrine:schema:update --force
 
