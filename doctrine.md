@@ -53,6 +53,10 @@
  
 		$qb->setMaxResult($limit);
 
+* 获取刚插入数据的id 
+
+		$this->getConnection()->lastInsertId();
+
 * 初始化处理
 
 		php bin/console doctrine:fixtures:load --append(执行默认)
